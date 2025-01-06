@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #070b1a;
+  --foreground: #ededed;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Styles pour l'animation des particules */
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Animation subtile pour les formules mathématiques */
+.katex {
+  transition: all 0.3s ease;
+}
+
+.katex:hover {
+  color: #60A5FA;
+  transform: scale(1.02);
+}
+
+.progress {
+  mix-blend-mode: difference;
+}
