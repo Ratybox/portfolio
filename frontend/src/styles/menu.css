@@ -1,0 +1,139 @@
+#menu_div
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: fixed;
+	z-index: 100;
+	width: clamp(0px, 100%, 300px);
+	height: 100vh;
+	background-color: var(--light-navy);
+	right: 0px;
+	top: 0px;
+	transform: translateX(100%);
+	transition: transform 0.3s ease-in-out;
+	box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
+	visibility: hidden;
+}
+
+#menu_div.open
+{
+	transform: translateX(0);
+	visibility: visible;
+}
+
+#menu_div .menu_icon
+{
+	display: block;
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	padding: 15px;
+	cursor: pointer;
+	stroke: var(--green);
+	stroke-width: 5px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	width: 30px;
+	transition: stroke 0.2s ease;
+	z-index: 10;
+}
+
+#menu_div .menu_icon:hover
+{
+	stroke: var(--green);
+}
+
+#menu_div .menu
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+#menu_div .menu ol
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	counter-reset: item 0;
+}
+
+#menu_div .menu li
+{
+	display: flex;
+	counter-increment: item 1;
+	font-size: 16px;
+}
+
+#menu_div .menu a
+{
+	display: flex;
+	padding: 10px;
+	font-size: 18px;
+	color: var(--lightest-slate);
+	text-decoration: none;
+}
+
+#menu_div .menu .not_button
+{
+	transition: color 0.2s ease;
+}
+
+#menu_div .menu .not_button::before
+{
+	content: "0" counter(item) ".";
+	margin-right: 10px;
+	color: var(--green);
+	font-size: 14px;
+	text-align: right;
+}
+
+#menu_div .menu .not_button:hover
+{
+	color: var(--green);
+}
+
+#menu_div .menu .button
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+	color: var(--green);
+	border: 1px solid var(--green);
+	border-radius: 4px;
+	padding: 10px 20px;
+	font-size: 14px;
+	transition: background-color 0.2s ease;
+}
+
+#menu_div .menu .button:hover
+{
+	background-color: rgba(100, 255, 218, 0.1);
+}
+
+#menu_div .menu .button .button_arrow
+{
+	width: 10px;
+	height: 10px;
+	margin-left: 10px;
+	stroke: var(--green);
+	stroke-width: 2px;
+	fill: none;
+	transition: transform var(--quick) ease;
+}
+
+#menu_div .menu .button:hover .button_arrow
+{
+	transform: translateY(3px);
+}

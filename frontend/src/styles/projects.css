@@ -1,0 +1,821 @@
+#projects_section
+{
+	background-color: var(--navy);
+	padding: 100px 0;
+}
+
+.projects_end
+{
+	background-color: var(--navy);
+}
+
+#projects_section .section_title
+{
+	color: var(--lightest-slate);
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+#projects_section .section_title::before
+{
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 20px;
+	color: var(--green);
+	margin-right: 10px;
+}
+
+#projects_section .project.in_animation
+{
+	opacity: 0;
+	transform: translateY(70px);
+	transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out, filter 0.3s ease;
+}
+
+#projects_section .sort_choices
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-bottom: 60px;
+	gap: 20px;
+}
+
+#projects_section .sort_choices .label
+{
+	color: var(--light-slate);
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 16px;
+}
+
+#projects_section .sort_choices .choice
+{
+	color: var(--green);
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: 4px;
+	padding: 8px 16px;
+	border: 1px solid var(--green);
+	transition: background-color var(--quick) ease;
+}
+
+#projects_section .sort_choices .choice:hover
+{
+	background-color: rgba(100, 255, 218, 0.1);
+}
+
+#projects_section .sort_choices .choice.selected
+{
+	color: var(--navy);
+	background-color: var(--green);
+	cursor: default;
+	pointer-events: none;
+}
+
+#projects_section .projects_content
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	gap: clamp(20px, 7vw, 80px);
+	margin-bottom: 80px;
+}
+
+@media screen and (max-width: 1125px)
+{
+	#projects_section .projects_content
+	{
+		gap: clamp(20px, 5vw, 60px);
+	}
+}
+
+@media screen and (max-width: 780px)
+{
+	#projects_section .projects_content
+	{
+		gap: 35px;
+	}
+}
+
+#projects_section .project
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 0px;
+	padding-right: clamp(0px, calc(18vw - 234px), 50px);
+}
+
+#projects_section .project.inverted
+{
+	flex-direction: row-reverse;
+	padding-left: clamp(0px, calc(18vw - 234px), 50px);
+	padding-right: 0px;
+}
+
+#projects_section .project_view
+{
+	z-index: 5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#projects_section .project_view a
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: calc(clamp(350px, 40vw, 600px) * 1.05);
+	overflow: hidden;
+	filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));
+	border-radius: 8px;
+	transition: filter 0.3s ease;
+}
+
+#projects_section .project_view a:hover
+{
+	filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.3));
+}
+
+#projects_section .project_view video
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#projects_section .project_view img
+{
+	width: 100%;
+	height: 100%;
+	opacity: 0.8;
+	transition: opacity var(--quick) ease;
+	object-fit: cover;
+}
+
+#projects_section .project_view a:hover img
+{
+	opacity: 1;
+}
+
+#projects_section .project_text
+{
+	z-index: 10;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	margin-right: -100px;
+}
+
+#projects_section .inverted .project_text
+{
+	align-items: flex-end;
+	margin-left: -100px;
+	margin-right: 0px;
+}
+
+#projects_section .project_text .type
+{
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	gap: 7px;
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 14px;
+	white-space: nowrap;
+	color: var(--green);
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+
+#projects_section .inverted .project_text .type
+{
+	margin-left: 0px;
+	margin-right: 15px;
+	flex-direction: row-reverse;
+}
+
+#projects_section .project_text .project_title
+{
+	font-family: 'Calibre', sans-serif;
+	font-size: 26px;
+	color: var(--lightest-slate);
+	text-decoration: none;
+	margin-bottom: 12px;
+	margin-left: 15px;
+	transition: color var(--quick) ease;
+}
+
+#projects_section .inverted .project_text .project_title
+{
+	margin-left: 0px;
+	margin-right: 15px;
+}
+
+#projects_section .project_text .project_title:hover
+{
+	color: var(--green);
+}
+
+#projects_section .project_text .text
+{
+	background-color: var(--light-navy);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	padding: 25px;
+	margin-bottom: 20px;
+	transition: box-shadow 0.3s ease, transform var(--quick) ease;
+}
+
+#projects_section .project_text .text:hover
+{
+	box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+	transform: translateY(-5px);
+}
+
+#projects_section .project_text .text p
+{
+	font-family: 'Calibre', sans-serif;
+	font-size: 18px;
+	text-align: start;
+	color: var(--light-slate);
+}
+
+#projects_section .inverted .project_text .text p
+{
+	text-align: end;
+}
+
+#projects_section .project_text .tags
+{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-bottom: 17px;
+	margin-left: 9px;
+	gap: 8px;
+}
+
+#projects_section .inverted .project_text .tags
+{
+	justify-content: flex-end;
+	margin-left: 0px;
+	margin-right: 9px;
+}
+
+#projects_section .project_text .tags a
+{
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 14px;
+	color: var(--light-slate);
+	text-decoration: none;
+	padding: 3px 6px;
+	white-space: nowrap;
+	transition: color var(--quick) ease;
+}
+
+#projects_section .project_text .tags a:hover
+{
+	color: var(--green);
+}
+
+#projects_section .project_text .links
+{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-left: 15px;
+	gap: 20px;
+}
+
+#projects_section .inverted .project_text .links
+{
+	margin-left: 0px;
+	margin-right: 15px;
+}
+
+#projects_section .project_text .links .github
+{
+	--color: var(--light-slate);
+}
+
+#projects_section .project_text .links .test
+{
+	--color: var(--green);
+}
+
+#projects_section .project_text .links svg
+{
+	width: 21px;
+	fill: none;
+	stroke-width: 2px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke: var(--color);
+	opacity: 1;
+	transition: opacity var(--quick) ease, transform var(--quick) ease;
+}
+
+#projects_section .project_text .links svg:hover
+{
+	opacity: 0.8;
+	transform: translateY(-3px);
+}
+
+#projects_section .project_text .links a
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+#projects_section .project_text .links .bubble
+{
+	pointer-events: none;
+	position: absolute;
+	text-align: center;
+	bottom: -40px;
+	color: var(--navy);
+	padding: 6px 12px;
+	background-color: var(--color);
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	white-space: nowrap;
+	font-size: 12px;
+	border-radius: 4px;
+	opacity: 0;
+	transition: opacity var(--quick) ease;
+}
+
+#projects_section .project_text .links .bubble::after
+{
+	pointer-events: none;
+	content: "";
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent var(--color) transparent;
+}
+
+#projects_section .project_text .links a:hover .bubble
+{
+	opacity: 1;
+}
+
+/* Other Projects Section */
+#projects_section .other_projects
+{
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+#projects_section .other_projects_title
+{
+	color: var(--lightest-slate);
+	font-family: 'Calibre', sans-serif;
+	font-size: 22px;
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+#projects_section .other_projects_grid
+{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 15px;
+}
+
+#projects_section .other_project
+{
+	position: relative;
+	cursor: default;
+}
+
+#projects_section .other_project_inner
+{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	position: relative;
+	height: 100%;
+	padding: 30px;
+	background-color: var(--light-navy);
+	border-radius: 8px;
+	transition: transform var(--quick) ease, background-color var(--quick) ease;
+}
+
+#projects_section .other_project_inner:hover
+{
+	transform: translateY(-5px);
+	background-color: var(--lightest-navy);
+}
+
+#projects_section .other_project_top
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+#projects_section .folder svg
+{
+	width: 40px;
+	height: 40px;
+	fill: var(--green);
+}
+
+#projects_section .other_project_links
+{
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+#projects_section .other_project_links a svg
+{
+	width: 20px;
+	height: 20px;
+	fill: none;
+	stroke: var(--light-slate);
+	stroke-width: 2px;
+	transition: stroke var(--quick) ease, transform var(--quick) ease;
+}
+
+#projects_section .other_project_links a:hover svg
+{
+	stroke: var(--green);
+	transform: translateY(-3px);
+}
+
+#projects_section .other_project_title
+{
+	color: var(--lightest-slate);
+	font-family: 'Calibre', sans-serif;
+	font-size: 20px;
+	margin-bottom: 10px;
+	transition: color var(--quick) ease;
+}
+
+#projects_section .other_project_inner:hover .other_project_title
+{
+	color: var(--green);
+}
+
+#projects_section .other_project_description
+{
+	color: var(--light-slate);
+	font-family: 'Calibre', sans-serif;
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+
+#projects_section .other_project_tech_list
+{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	color: var(--slate);
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 12px;
+}
+
+@media screen and (max-width: 780px) {
+	#projects_section .project {
+		flex-direction: column;
+		padding: 0 !important;
+		margin-bottom: 40px;
+		background: none;
+		position: relative;
+		filter: none;
+	}
+
+	#projects_section .project.inverted {
+		flex-direction: column;
+	}
+
+	#projects_section .project_view {
+		width: 100%;
+		margin-bottom: -40px;
+		z-index: 1;
+	}
+
+	#projects_section .project_view a {
+		width: 100%;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	#projects_section .project_text {
+		width: 90%;
+		margin: 0 auto;
+		z-index: 2;
+		box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+		position: relative;
+		border-radius: 5px;
+	}
+
+	#projects_section .inverted .project_text {
+		margin: 0 auto;
+		align-items: flex-start;
+	}
+
+	#projects_section .project_text .type {
+		margin: 0;
+		font-size: 12px;
+	}
+
+	#projects_section .inverted .project_text .type {
+		margin: 0;
+		flex-direction: row;
+	}
+
+	#projects_section .project_text .project_title {
+		margin: 0 0 15px 0;
+		font-size: 22px;
+	}
+
+	#projects_section .inverted .project_text .project_title {
+		margin: 0 0 15px 0;
+		text-align: left;
+	}
+
+	#projects_section .project_text .text {
+		box-shadow: none;
+		padding: 20px 0;
+		background: transparent;
+	}
+
+	#projects_section .project_text .text p {
+		font-size: 16px;
+		text-align: left;
+	}
+
+	#projects_section .inverted .project_text .text p {
+		text-align: left;
+	}
+
+	#projects_section .project_text .tags {
+		justify-content: flex-start;
+		margin: 0;
+		flex-wrap: wrap;
+	}
+
+	#projects_section .inverted .project_text .tags {
+		justify-content: flex-start;
+		margin: 0;
+	}
+
+	#projects_section .project_text .tags span {
+		font-size: 12px;
+		margin-bottom: 5px;
+	}
+
+	/* Github button styles */
+	.project_links {
+		display: flex;
+		margin-top: 15px;
+		gap: 15px;
+	}
+
+	.project_github_link {
+		display: flex;
+		align-items: center;
+		color: var(--light-slate);
+		font-size: 20px;
+		transition: color 0.2s ease, transform 0.2s ease;
+	}
+
+	.project_github_link:hover {
+		color: var(--green);
+		transform: translateY(-3px);
+	}
+
+	@media screen and (max-width: 480px) {
+		#projects_section .project_text {
+			width: 95%;
+			padding: 35px 20px;
+		}
+
+		#projects_section .projects_filters {
+			gap: 8px;
+		}
+
+		#projects_section .project_text .project_title {
+			font-size: 20px;
+		}
+
+		.filter {
+			padding: 5px 10px;
+			font-size: 12px;
+		}
+	}
+}
+
+/* Styles pour GitHub button desktop */
+.project_links {
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.project_github_link {
+	color: var(--light-slate);
+	transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.project_github_link:hover {
+	color: var(--green);
+	transform: translateY(-3px);
+}
+
+.project_github_link svg {
+	width: 22px;
+	height: 22px;
+}
+
+#projects_section .loading-spinner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 300px;
+}
+
+#projects_section .spinner {
+	width: 40px;
+	height: 40px;
+	border: 3px solid rgba(100, 255, 218, 0.2);
+	border-radius: 50%;
+	border-top-color: var(--green);
+	animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+	to { transform: rotate(360deg); }
+}
+
+#projects_section .no-projects {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 200px;
+	color: var(--light-slate);
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 16px;
+	text-align: center;
+}
+
+/* Ajoutez ces styles */
+.projects_filters {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 15px;
+	margin-bottom: 50px;
+}
+
+.filter {
+	background: transparent;
+	color: var(--light-slate);
+	border: 1px solid var(--green);
+	border-radius: 4px;
+	padding: 8px 15px;
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 14px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.filter.active {
+	background: rgba(100, 255, 218, 0.1);
+	color: var(--green);
+}
+
+.filter:hover {
+	background: rgba(100, 255, 218, 0.1);
+}
+
+#projects_section .project_text .tags span {
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 14px;
+	color: var(--light-slate);
+	text-decoration: none;
+	padding: 3px 6px;
+	white-space: nowrap;
+	transition: color var(--quick) ease;
+}
+
+#projects_section .project_text .tags span:hover {
+	color: var(--green);
+}
+
+@media screen and (max-width: 768px) {
+	.projects_filters {
+		gap: 10px;
+		margin-bottom: 30px;
+	}
+	
+	.filter {
+		padding: 6px 12px;
+		font-size: 13px;
+	}
+}
+
+#projects_section .project_title_row {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	margin-bottom: 12px;
+	margin-left: 15px;
+}
+
+#projects_section .inverted .project_title_row {
+	margin-left: 0px;
+	margin-right: 15px;
+}
+
+#projects_section .project_title {
+	margin-bottom: 0;
+}
+
+.project_github_link {
+	color: var(--light-slate);
+	transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.project_github_link:hover {
+	color: var(--green);
+}
+
+.project_github_link svg {
+	width: 22px;
+	height: 22px;
+}
+
+/* Corrections pour le responsive */
+@media screen and (max-width: 780px) {
+	#projects_section .project {
+		margin-bottom: 60px; /* Plus d'espace entre les projets */
+	}
+	
+	#projects_section .project_text {
+		padding: 35px 25px; /* Plus d'espacement interne */
+	}
+	
+	#projects_section .project_title_row {
+		margin: 0 0 15px 0;
+		width: 100%;
+		justify-content: space-between;
+	}
+	
+	#projects_section .project_text .text {
+		margin: 15px 0; /* Ajout de marge verticale */
+	}
+	
+	#projects_section .project_text .text p {
+		line-height: 1.6; /* Meilleure lisibilité */
+	}
+	
+	#projects_section .project_text .tags {
+		gap: 10px; /* Plus d'espace entre les tags */
+	}
+	
+	#projects_section .project_text .tags span {
+		padding: 5px 8px; /* Plus grande zone tactile */
+	}
+	
+	#projects_section .project_view {
+		margin-bottom: -30px; /* Ajustement pour le chevauchement */
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#projects_section .projects_content {
+		gap: 50px; /* Plus d'espace entre les projets */
+	}
+	
+	#projects_section .project_text {
+		padding: 30px 20px;
+	}
+}

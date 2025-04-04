@@ -1,0 +1,263 @@
+#contact_section
+{
+	background-color: var(--navy);
+	padding: 100px 0;
+}
+
+#contact_section .content.leaning
+{
+	margin-top: 0;
+	margin-bottom: 0;
+	max-width: 600px;
+}
+
+#contact_section .section_title
+{
+	color: var(--lightest-slate);
+	margin-bottom: 40px;
+	text-align: center;
+	font-size: 30px;
+}
+
+#contact_section .section_title::before
+{
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 20px;
+	color: var(--green);
+	margin-right: 10px;
+}
+
+#contact_section .contact_content
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 25px;
+	flex-wrap: wrap;
+}
+
+@media screen and (max-width: 780px)
+{
+	#contact_section .contact_content
+	{
+		flex-direction: column;
+		gap: 15px;
+	}
+	
+	#contact_section .section_title
+	{
+		font-size: 24px;
+	}
+	
+	#contact_section .section_title::before
+	{
+		font-size: 16px;
+	}
+}
+
+#contact_section .social_line
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+#contact_section .social_link
+{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 15px;
+	border-radius: 8px;
+	background-color: var(--light-navy);
+	gap: 15px;
+	text-decoration: none;
+	transition: all var(--quick) ease;
+	border: 1px solid transparent;
+}
+
+#contact_section .social_link:hover
+{
+	transform: translateY(-5px);
+	background-color: var(--lightest-navy);
+	border-color: var(--green);
+}
+
+#contact_section .social_link img
+{
+	width: 28px;
+	height: 28px;
+	filter: brightness(0) saturate(100%) invert(83%) sepia(7%) saturate(394%) hue-rotate(179deg) brightness(96%) contrast(87%);
+	transition: filter var(--quick) ease;
+}
+
+#contact_section .social_link:hover img
+{
+	filter: brightness(0) saturate(100%) invert(95%) sepia(12%) saturate(1857%) hue-rotate(104deg) brightness(104%) contrast(104%);
+}
+
+#contact_section .social_link .social_text
+{
+	overflow: hidden;
+	width: auto;
+	opacity: 1;
+	transition: opacity var(--quick) ease;
+}
+
+#contact_section .social_link .social_text span
+{
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 14px;
+	color: var(--light-slate);
+	white-space: nowrap;
+	transition: color var(--quick) ease;
+}
+
+#contact_section .social_link:hover .social_text span
+{
+	color: var(--green);
+}
+
+#contact_section .email-link
+{
+	margin-top: 40px;
+	width: 100%;
+	text-align: center;
+}
+
+#contact_section .email-link a
+{
+	color: var(--green);
+	background-color: transparent;
+	border: 1px solid var(--green);
+	border-radius: 4px;
+	padding: 1.25rem 1.75rem;
+	font-size: 14px;
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	line-height: 1;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all var(--quick) ease;
+	margin: 20px auto 0;
+	display: inline-block;
+}
+
+#contact_section .email-link a:hover
+{
+	background-color: rgba(100, 255, 218, 0.1);
+	outline: none;
+	transform: translateY(-5px);
+}
+
+@media screen and (max-width: 500px)
+{
+	#contact_section .social_line
+	{
+		flex-direction: column;
+		width: 100%;
+	}
+	
+	#contact_section .social_link
+	{
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+#contact_section .email-display {
+	text-align: center;
+	margin-top: 40px;
+	padding: 25px;
+	background: var(--light-navy);
+	border-radius: 8px;
+	border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+#contact_section .email-label {
+	display: block;
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 14px;
+	color: var(--light-slate);
+	margin-bottom: 12px;
+}
+
+#contact_section .email-address {
+	font-size: 1.4rem;
+	color: var(--green);
+	text-decoration: none;
+	transition: all 0.2s ease;
+	word-break: break-all;
+}
+
+#contact_section .email-address:hover {
+	color: var(--lightest-slate);
+	text-shadow: 0 0 8px rgba(100, 255, 218, 0.4);
+}
+
+@media (max-width: 768px) {
+	#contact_section .email-address {
+		font-size: 1.1rem;
+	}
+	
+	#contact_section .email-display {
+		padding: 20px;
+		margin-top: 30px;
+	}
+}
+
+.email-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	margin-top: 10px;
+}
+
+.email-address {
+	font-size: 1.3rem;
+	color: var(--lightest-slate);
+	word-break: break-all;
+}
+
+.copy-button {
+	background: transparent;
+	border: none;
+	padding: 8px;
+	cursor: pointer;
+	position: relative;
+	width: 36px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: visible;
+}
+
+.copy-icon {
+	filter: invert(72%) sepia(48%) saturate(573%) hue-rotate(103deg) brightness(101%) contrast(101%);
+}
+
+.copied-tooltip {
+	position: absolute;
+	background: var(--green);
+	color: var(--navy);
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 12px;
+	font-weight: 500;
+	padding: 4px 8px;
+	border-radius: 4px;
+	white-space: nowrap;
+	pointer-events: none;
+}
+
+@media (max-width: 768px) {
+	.email-wrapper {
+		flex-direction: column;
+		gap: 20px;
+	}
+	
+	.copy-button {
+		margin-top: 5px;
+	}
+}

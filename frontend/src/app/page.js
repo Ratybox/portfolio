@@ -1,277 +1,178 @@
-'use client';
+"use client";
 
+import { useEffect, useState } from 'react';
 import Image from "next/image";
-import { motion, useScroll } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
-import 'katex/dist/katex.min.css';
-import { InlineMath, BlockMath } from 'react-katex';
+import Link from "next/link";
+import { motion, AnimatePresence } from 'framer-motion';
 
-function ParticleBackground() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    const canvas = document.getElementById('particle-canvas');
-    if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d');
-    
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    // Configuration améliorée des particules
-    const particles = [];
-    const particleCount = 150; // Augmentation du nombre de particules
-    const connectionDistance = 150; // Distance de connexion augmentée
-    
-    class Particle {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.5; // Vitesse réduite pour un mouvement plus fluide
-        this.vy = (Math.random() - 0.5) * 0.5;
-        this.radius = Math.random() * 1.5 + 0.5; // Taille variable des particules
-        this.baseRadius = this.radius;
-      }
-      
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        
-        // Effet de rebond en douceur
-        if (this.x < 0 || this.x > canvas.width) {
-          this.vx = -this.vx * 0.95;
-        }
-        if (this.y < 0 || this.y > canvas.height) {
-          this.vy = -this.vy * 0.95;
-        }
-      }
-    }
-
-    // Initialisation des particules
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-
-    let animationFrameId;
-    function animate() {
-      ctx.fillStyle = 'rgba(10, 10, 20, 0.2)'; // Fond plus sombre avec effet de traînée
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      particles.forEach(particle => {
-        particle.update();
-        
-        // Dessin des particules avec un effet de lueur
-        const gradient = ctx.createRadialGradient(
-          particle.x, particle.y, 0,
-          particle.x, particle.y, particle.radius * 2
-        );
-        gradient.addColorStop(0, 'rgba(100, 149, 237, 0.3)'); // Bleu cornflower
-        gradient.addColorStop(1, 'rgba(100, 149, 237, 0)');
-        
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.radius * 2, 0, Math.PI * 2);
-        ctx.fillStyle = gradient;
-        ctx.fill();
-      });
-      
-      // Connexions entre particules avec effet de dégradé
-      particles.forEach((p1, i) => {
-        particles.slice(i + 1).forEach(p2 => {
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          
-          if (distance < connectionDistance) {
-            const opacity = (1 - distance / connectionDistance) * 0.15;
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(100, 149, 237, ${opacity})`; // Bleu cornflower avec opacité variable
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        });
-      });
-      
-      animationFrameId = requestAnimationFrame(animate);
-    }
-    
-    animate();
-    
-    return () => {
-      window.removeEventListener('resize', resizeCanvas);
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
-    };
-  }, [mounted]);
-
-  if (!mounted) return null;
-
-  return (
-    <canvas
-      id="particle-canvas"
-      className="fixed top-0 left-0 w-full h-full -z-10"
-    />
-  );
-}
-
-function Section({ title, content, index }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-
-  return (
-    <motion.section
-      ref={ref}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      className="min-h-[150vh] p-12 bg-white/5 backdrop-blur-lg rounded-lg shadow-lg relative mb-32"
-    >
-      <figure className="progress fixed left-10 top-1/2 -translate-y-1/2">
-        <svg width="75" height="75" viewBox="0 0 100 100">
-          <circle 
-            cx="50" 
-            cy="50" 
-            r="30" 
-            pathLength="1" 
-            className="stroke-gray-200 dark:stroke-gray-700 fill-none stroke-[8px]" 
-          />
-          <motion.circle
-            cx="50"
-            cy="50"
-            r="30"
-            pathLength="1"
-            className="stroke-blue-500 dark:stroke-blue-400 fill-none stroke-[8px]"
-            style={{ pathLength: scrollYProgress }}
-          />
-        </svg>
-      </figure>
-      
-      <div className="sticky top-10">
-        <BlockMath>{`\\Large{${title}}`}</BlockMath>
-      </div>
-
-      <div className="mt-24 space-y-32">
-        {content}
-      </div>
-    </motion.section>
-  );
-}
+// Importation des composants
+import Header from './components/Header';
+import About from './components/About';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Experience from './components/Experience';
+import Contact from './components/Contact';
+import Particles from './components/Particles';
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setMounted(true);
+    // Simulation du chargement
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
   }, []);
 
-  const sections = [
-    {
-      title: "\\mathcal{A}cademic \\space \\mathcal{B}ackground",
-      content: [
-        <div key="education" className="space-y-16">
-          <BlockMath>{`\\begin{align*}
-            \\textbf{MSc Data Science} &\\rightarrow \\text{USTO} \\\\
-            \\text{Year} &: 2020-2022
-          \\end{align*}`}</BlockMath>
+  // Variants pour les animations
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.6 } }
+  };
 
-          <BlockMath>{`\\begin{align*}
-            \\textbf{Focus Areas} &\\rightarrow \\text{Primary Subjects} \\\\
-            &\\begin{cases}
-              \\text{Advanced Machine Learning} \\\\
-              \\text{Deep Learning Architecture} \\\\
-              \\text{Statistical Analysis} \\\\
-              \\text{Big Data Processing}
-            \\end{cases}
-          \\end{align*}`}</BlockMath>
+  const contentVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+        when: "beforeChildren"
+      }
+    }
+  };
 
-          <BlockMath>{`\\begin{align*}
-            \\textbf{Research Topics} &\\rightarrow \\text{Specializations} \\\\
-            &\\begin{cases}
-              \\text{Neural Networks} \\\\
-              \\text{Computer Vision} \\\\
-              \\text{Natural Language Processing}
-            \\end{cases}
-          \\end{align*}`}</BlockMath>
-        </div>
-      ]
-    },
-    {
-      title: "\\mathcal{P}rofessional \\space \\mathcal{E}xperience",
-      content: [
-        <div key="experience" className="space-y-16">
-          <BlockMath>{`\\begin{align*}
-            \\textbf{Backend Developer} &\\rightarrow \\text{B2B Startup} \\\\
-            \\text{Duration} &: 2021-2023
-          \\end{align*}`}</BlockMath>
-
-          <BlockMath>{`\\begin{align*}
-            \\textbf{Key Projects} &\\rightarrow \\text{Achievements} \\\\
-            &\\begin{cases}
-              \\text{ML Pipeline Development} \\\\
-              \\text{API Architecture Design} \\\\
-              \\text{Data Infrastructure}
-            \\end{cases}
-          \\end{align*}`}</BlockMath>
-
-          <BlockMath>{`\\begin{align*}
-            \\textbf{Technologies} &\\rightarrow \\text{Stack} \\\\
-            &\\begin{cases}
-              \\text{Python & FastAPI} \\\\
-              \\text{PostgreSQL} \\\\
-              \\text{Docker & Kubernetes}
-            \\end{cases}
-          \\end{align*}`}</BlockMath>
-        </div>
-      ]
-    },
-    // ... autres sections similaires
-  ];
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1, 
+      transition: { 
+        type: "spring", 
+        stiffness: 100, 
+        damping: 12 
+      } 
+    }
+  };
 
   return (
     <>
-      {mounted && <ParticleBackground />}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="min-h-screen bg-transparent p-8"
-      >
-        <main className="max-w-4xl mx-auto pl-20">
-          <motion.div
-            initial={{ y: -50 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-4xl font-bold mb-4">
-              <InlineMath>{`\\mathcal{R}adhi \\space \\mathcal{B}adache`}</InlineMath>
-            </h1>
-            <h2 className="text-2xl text-gray-600 dark:text-gray-400">
-              <InlineMath>{`\\text{Data Scientist} \\space \\cdot \\space \\text{ML Engineer}`}</InlineMath>
-            </h2>
-          </motion.div>
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div 
+            id="loading_screen"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          />
+        )}
+      </AnimatePresence>
+      
+      <div id="safari_warning">
+        <p>
+          You are using Safari. This website is not optimized for this browser.
+          Please use another browser like Chrome or Firefox.
+        </p>
+      </div>
+      <div id="lcp"><p>LCP</p></div>
+      
+      <Header />
 
-          <div className="space-y-32">
-            {sections.map((section, index) => (
-              <Section
-                key={index}
-                title={section.title}
-                content={section.content}
-                index={index}
-              />
-            ))}
-          </div>
+      <motion.div 
+        id="content"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+      >
+        <main id="main">
+          <a id="home"></a>
+          <motion.section 
+            className="section" 
+            id="home_section"
+            variants={contentVariants}
+          >
+            <Particles />
+            <div className="content">
+              <motion.span className="hi" variants={itemVariants}>Hi, my name is</motion.span>
+              <motion.span className="name" variants={itemVariants}>Radhi Badache.</motion.span>
+              <motion.span className="title" variants={itemVariants}>Backend Developer.</motion.span>
+              <motion.p className="bio" variants={itemVariants}>
+                I'm a Backend developper, passionate about creating elegant solutions to complex problems.
+                I specialize in web development and am always looking for new opportunities.
+              </motion.p>
+              <motion.div className="home_button" variants={itemVariants}>
+                <motion.a 
+                  className="button" 
+                  href="#about"
+                  whileHover={{ y: -3 }}
+                  whileTap={{ y: 1 }}
+                >
+                  <p>Get Started</p>
+                  <svg className="button_arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.69 17.39"><g>
+                    <path className="path_1" d="M8.9 12.4 L8.9 12.4"/>
+                    <path className="path_2" d="M16.2 5 8.9 12.4 1.5 5"/>
+                  </g></svg>
+                </motion.a>
+              </motion.div>
+            </div>
+          </motion.section>
+
+          <About />
+          <Projects />
+          <Skills />
+          <Experience />
+          <Contact />
+
+          <motion.footer 
+            className="section" 
+            id="footer_section"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="content">
+              <div className="footer_content">
+                <motion.a 
+                  className="footer_licence" 
+                  href="https://github.com/Ratybox/Portfolio/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ y: 0 }}
+                >
+                  <span>© 2025 Radhi Badache</span>
+                  <Image src="/resources/svgs/license.svg" alt="license" width={16} height={16} />
+                  <span>MIT license</span>
+                </motion.a>
+                <motion.a 
+                  className="github-link" 
+                  href="https://github.com/Ratybox/portfolio" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ y: 0 }}
+                >
+                  <span>View Source</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.05 20.31"><g><path d="M7.26 16.34c-4.11 1.23-4.11-2.06-5.76-2.47M13 18.81V15.62a2.78 2.78 0 0 0-.77-2.15c2.59-.28 5.3-1.26 5.3-5.76a4.46 4.46 0 0 0-1.23-3.08 4.18 4.18 0 0 0-.08-3.11s-1-.29-3.22 1.22a11 11 0 0 0-5.76 0C5 1.23 4 1.52 4 1.52A4.18 4.18 0 0 0 4 4.63 4.48 4.48 0 0 0 2.73 7.74c0 4.46 2.72 5.44 5.31 5.76a2.8 2.8 0 0 0-.78 2.12v3.19"/></g></svg>
+                </motion.a>
+              </div>
+              <div className="footer_content">
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                >
+                  Built with <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">Next.js</a>. 
+                  Design inspired by <a href="https://github.com/angeluriot" target="_blank" rel="noopener noreferrer">Angel Uriot</a>.
+                  Thank you for visiting!
+                </motion.p>
+              </div>
+            </div>
+          </motion.footer>
         </main>
       </motion.div>
     </>

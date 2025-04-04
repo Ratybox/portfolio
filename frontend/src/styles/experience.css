@@ -1,0 +1,483 @@
+#experience_section
+{
+	background-color: var(--navy);
+	padding: 100px 0;
+}
+
+.experience_end
+{
+	background-color: var(--navy);
+}
+
+#experience_section .section_title
+{
+	color: var(--lightest-slate);
+	margin-bottom: 60px;
+	text-align: center;
+}
+
+#experience_section .section_title::before
+{
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 20px;
+	color: var(--green);
+	margin-right: 10px;
+}
+
+#experience_section .job.in_animation
+{
+	opacity: 0;
+	transform: translateY(70px);
+	transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out, filter 0.3s ease;
+}
+
+#experience_section .sort_choices
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-bottom: 60px;
+	gap: 20px;
+}
+
+#experience_section .sort_choices .label
+{
+	color: var(--light-slate);
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 16px;
+}
+
+#experience_section .sort_choices .choice
+{
+	color: var(--green);
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: 4px;
+	padding: 8px 16px;
+	border: 1px solid var(--green);
+	transition: background-color var(--quick) ease;
+}
+
+#experience_section .sort_choices .choice:hover
+{
+	background-color: rgba(100, 255, 218, 0.1);
+}
+
+#experience_section .sort_choices .choice.selected
+{
+	color: var(--navy);
+	background-color: var(--green);
+	cursor: default;
+	pointer-events: none;
+}
+
+#experience_section .experience_content
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	gap: clamp(20px, 7vw, 70px);
+}
+
+@media screen and (max-width: 1125px)
+{
+	#experience_section .experience_content
+	{
+		gap: clamp(20px, 5vw, 70px);
+	}
+}
+
+@media screen and (max-width: 780px)
+{
+	#experience_section .experience_content
+	{
+		gap: 35px;
+	}
+}
+
+#experience_section .job
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 0px;
+	padding-right: clamp(0px, calc(18vw - 234px), 50px);
+}
+
+#experience_section .job.inverted
+{
+	flex-direction: row-reverse;
+	padding-left: clamp(0px, calc(18vw - 234px), 50px);
+	padding-right: 0px;
+}
+
+#experience_section .job_view
+{
+	z-index: 5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#experience_section .job_view a
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: calc(clamp(350px, 40vw, 600px) * 1.05);
+	overflow: hidden;
+	filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));
+	border-radius: 8px;
+	transition: filter 0.3s ease;
+}
+
+#experience_section .job_view a:hover
+{
+	filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.3));
+}
+
+#experience_section .job_view img
+{
+	width: 100%;
+	height: 100%;
+	opacity: 0.8;
+	transition: opacity var(--quick) ease;
+}
+
+#experience_section .job_view a:hover img
+{
+	opacity: 1;
+}
+
+#experience_section .job_text
+{
+	z-index: 10;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	margin-right: -100px;
+}
+
+#experience_section .inverted .job_text
+{
+	align-items: flex-end;
+	margin-left: -100px;
+	margin-right: 0px;
+}
+
+#experience_section .job_text .type
+{
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	gap: 7px;
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 14px;
+	white-space: nowrap;
+	color: var(--green);
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+
+#experience_section .inverted .job_text .type
+{
+	margin-left: 0px;
+	margin-right: 15px;
+	flex-direction: row-reverse;
+}
+
+#experience_section .job_text .job_title
+{
+	font-family: 'Calibre', sans-serif;
+	font-size: 26px;
+	color: var(--lightest-slate);
+	text-decoration: none;
+	margin-bottom: 12px;
+	margin-left: 15px;
+	transition: color var(--quick) ease;
+}
+
+#experience_section .inverted .job_text .job_title
+{
+	margin-left: 0px;
+	margin-right: 15px;
+}
+
+#experience_section .job_text .job_title:hover
+{
+	color: var(--green);
+}
+
+#experience_section .job_text .text
+{
+	background-color: var(--light-navy);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	padding: 25px;
+	margin-bottom: 20px;
+	transition: box-shadow 0.3s ease, transform var(--quick) ease;
+}
+
+#experience_section .job_text .text:hover
+{
+	box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+	transform: translateY(-5px);
+}
+
+#experience_section .job_text .text p
+{
+	font-family: 'Calibre', sans-serif;
+	font-size: 18px;
+	text-align: start;
+	color: var(--light-slate);
+}
+
+#experience_section .inverted .job_text .text p
+{
+	text-align: end;
+}
+
+#experience_section .job_text .tags
+{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-bottom: 17px;
+	margin-left: 9px;
+	gap: 8px;
+}
+
+#experience_section .inverted .job_text .tags
+{
+	justify-content: flex-end;
+	margin-left: 0px;
+	margin-right: 9px;
+}
+
+#experience_section .job_text .tags a
+{
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 14px;
+	color: var(--light-slate);
+	text-decoration: none;
+	opacity: 1;
+	padding: 3px 6px;
+	white-space: nowrap;
+	transition: color var(--quick) ease;
+}
+
+#experience_section .job_text .tags a:hover
+{
+	color: var(--green);
+}
+
+#experience_section .job_text .links
+{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-left: 15px;
+	gap: 20px;
+}
+
+#experience_section .inverted .job_text .links
+{
+	margin-left: 0px;
+	margin-right: 15px;
+}
+
+#experience_section .job_text .links .github
+{
+	--color: var(--light-slate);
+}
+
+#experience_section .job_text .links .test
+{
+	--color: var(--green);
+}
+
+#experience_section .job_text .links svg
+{
+	width: 21px;
+	fill: none;
+	stroke-width: 2px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke: var(--color);
+	opacity: 1;
+	transition: opacity var(--quick) ease;
+}
+
+#experience_section .job_text .links svg:hover
+{
+	opacity: 0.6;
+}
+
+#experience_section .job_text .links a
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+#experience_section .job_text .links .bubble
+{
+	pointer-events: none;
+	position: absolute;
+	text-align: center;
+	bottom: -40px;
+	color: var(--navy);
+	padding: 6px 12px;
+	background-color: var(--color);
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	white-space: nowrap;
+	font-size: 12px;
+	border-radius: 4px;
+	opacity: 0;
+	transition: opacity var(--quick) ease;
+}
+
+#experience_section .job_text .links .bubble::after
+{
+	pointer-events: none;
+	content: "";
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent var(--color) transparent;
+}
+
+#experience_section .job_text .links a:hover .bubble
+{
+	opacity: 1;
+}
+
+.lds-ring {
+	display: none;
+}
+
+#experience_section .job_view video {
+	display: none;
+}
+
+#experience_section .job_view .lds-ring {
+	display: none;
+}
+
+@keyframes lds-ring {
+	/* Supprimer cette animation */
+}
+
+@media screen and (max-width: 780px)
+{
+	#experience_section .job
+	{
+		background-size: cover;
+		background-position: center;
+		border-radius: 8px;
+		filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));
+		border-radius: 15px;
+		filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.5));
+		transition: filter 0.3s ease;
+	}
+
+	#experience_section .job:hover
+	{
+		filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.7));
+	}
+
+	#experience_section .job_text
+	{
+		align-items: flex-start;
+		margin-left: 0px;
+		margin-right: 0px;
+		padding: 60px 40px 60px 40px;
+		background-color: rgba(52, 52, 102, 0.75);
+		border-radius: 15px;
+	}
+
+	@media screen and (max-width: 500px)
+	{
+		#experience_section .job_text
+		{
+			padding: 50px 25px 50px 25px;
+		}
+	}
+
+	#experience_section .job_text .type
+	{
+		margin-left: 0px;
+	}
+
+	#experience_section .job_text .job_title
+	{
+		margin-left: 0px;
+	}
+
+	#experience_section .job_text .text
+	{
+		background: none;
+		box-shadow: none;
+		border-radius: 0px;
+		padding: 10px 0px 8px 0px;
+	}
+
+	#experience_section .job_text .text:hover
+	{
+		box-shadow: none;
+	}
+
+	#experience_section .job_text .text p
+	{
+		color: var(--white);
+	}
+
+	#experience_section .job_text .tags
+	{
+		margin-left: -6px;
+	}
+
+	#experience_section .job_text .links
+	{
+		margin-left: 0px;
+	}
+
+	#experience_section .job_text .links .bubble
+	{
+		bottom: 15px;
+	}
+}
+
+#experience_section .loading-spinner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 300px;
+}
+
+#experience_section .spinner {
+	width: 40px;
+	height: 40px;
+	border: 3px solid rgba(100, 255, 218, 0.2);
+	border-radius: 50%;
+	border-top-color: var(--green);
+	animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+	to { transform: rotate(360deg); }
+}

@@ -1,0 +1,60 @@
+{
+	"main": [
+		{
+			"date": 2024,
+			"type": "Web",
+			"title": "Portfolio",
+			"description": "A modern portfolio developed with Next.js, showcasing my web development skills and projects. It features smooth animations and an intuitive user interface.",
+			"technologies": ["Next.js", "React", "HTML", "CSS", "Tailwind CSS"],
+			"github": "https://github.com/Ratybox/portfolio",
+			"url": "https://radhibadache.com",
+			"image": "/resources/images/projects/Portfolio.png",
+			"categories": ["web"]
+		},
+		{
+			"date": 2025,
+			"type": "School Project",
+			"title": "Madabina",
+			"description": "A project that implements PCA from scratch to visualize clustering and reduce dimensions, only using with NumPy.",
+			"technologies": ["NumPy", "Chart.js", "Next.js"],
+			"github": "https://github.com/RadhiBadache/madabina",
+			"url": "https://madabina-demo.herokuapp.com",
+			"image": "/resources/images/projects/Madabina.png",
+			"categories": ["school", "AI"]
+		},
+		{
+			"date": 2024,
+			"type": "School Project",
+			"title": "Ramax",
+			"description": "A project that involves visualizing qualitative data and encoding it using OneHotEncoding for quantification. It serves to impute data through optimization algorithms and machine learning.",
+			"technologies": ["Python", "Pandas", "Numpy", "Scikit-learn"],
+			"github": "https://github.com/Amirmadjour/tab_de_codagex",
+			"url": "https://test.madjria.com/",
+			"image": "/resources/images/projects/Ramax.png",
+			"categories": ["school", "AI"]
+		},
+		{
+			"date": 2023,
+			"type": "Web & School Project",
+			"title": "Majlis",
+			"description": "An administration tool for disciplinary councils for university departments, built with Electron, Express.js, and React.",
+			"technologies": ["Electron", "Express.js", "React", "MySQL", "Amazon RDS"],
+			"github": "https://github.com/Pfcpi/Majlis",
+			"url": "https://drive.google.com/drive/folders/1ulr9InR4xba3ghI4F1GTilgRUqiiweNp",
+			"image": "/resources/images/projects/Majlis.png",
+			"categories": ["web", "school"]
+		},
+		{
+			"date": 2023,
+			"type": "SaaS Project",
+			"title": "Livri",
+			"description": "A B2B SaaS platform for restaurants and their suppliers, built with Django Rest Framework and Next.js.",
+			"technologies": ["Django Rest Framework", "Next.js"],
+			"github": "https://github.com/Ratybox/livri",
+			"url": "https://backend.livri.tech/admin/",
+			"image": "/resources/images/projects/Livri.png",
+			"categories": ["web"]
+		}
+	],
+	"other": []
+}

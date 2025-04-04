@@ -1,0 +1,195 @@
+{
+	"skills_categories":
+	[
+		{
+			"name" : "Software Development",
+			"skills" :
+			[
+				{
+					"name": "C",
+					"logo": "/resources/svgs/skills/C.svg",
+					"link": "https://en.wikipedia.org/wiki/C_(programming_language)"
+				},
+
+				{
+					"name": "Java",
+					"logo": "/resources/svgs/skills/Java.svg",
+					"link": "https://en.wikipedia.org/wiki/Java_(programming_language)"
+				},
+
+				{
+					"name": "Python",
+					"logo": "/resources/svgs/skills/Python.svg",
+					"link": "https://www.python.org/"
+				},
+				{
+					"name": "Git",
+					"logo": "/resources/svgs/skills/Git.svg",
+					"link": "https://git-scm.com/"
+				},
+				{
+					"name": "Linux",
+					"logo": "/resources/svgs/skills/Unix.svg",
+					"link": "https://en.wikipedia.org/wiki/Unix"
+				}
+			]
+		},
+
+		{
+			"name" : "Back-end Web",
+			"skills" :
+			[
+				{
+					"name": "Python",
+					"logo": "/resources/svgs/skills/Python.svg",
+					"link": "https://www.python.org/"
+				},
+				{
+					"name": "Django",
+					"logo": "/resources/svgs/skills/Django.svg",
+					"link": "https://flask.palletsprojects.com/"
+				},
+				
+				{
+					"name": "FastAPI",
+					"logo": "/resources/svgs/skills/FastAPI.svg",
+					"link": "https://rubyonrails.org/"
+				},
+				{
+					"name": "NodeJS",
+					"logo": "/resources/svgs/skills/NodeJS.svg",
+					"link": "https://nodejs.org/en/"
+				},
+				{
+					"name": "ExpressJS",
+					"logo": "/resources/images/skills/ExpressJS.webp",
+					"link": "http://expressjs.com"
+				},
+				{
+					"name": "Socket.io",
+					"logo": "/resources/svgs/skills/Socket_io.svg",
+					"link": "https://socket.io"
+				},
+				{
+					"name": "PostgreSQL",
+					"logo": "/resources/svgs/skills/Postgres.svg",
+					"link": "https://www.postgresql.org/"
+				},
+				{
+					"name": "MySQL",
+					"logo": "/resources/svgs/skills/MySQL.svg",
+					"link": "https://www.mysql.com/"
+				},
+				{
+					"name": "MongoDB",
+					"logo": "/resources/svgs/skills/MongoDB.svg",
+					"link": "https://www.mongodb.com"
+				},
+				{
+					"name": "Stripe",
+					"logo": "/resources/svgs/skills/Stripe.svg",
+					"link": "https://stripe.com/"
+				}
+			]
+		},
+		{
+			"name" : "Front-end Web",
+			"skills" :
+			[
+				{
+					"name": "HTML",
+					"logo": "/resources/svgs/skills/Html.svg",
+					"link": "https://en.wikipedia.org/wiki/HTML"
+				},
+				{
+					"name": "CSS",
+					"logo": "/resources/svgs/skills/Css.svg",
+					"link": "https://en.wikipedia.org/wiki/CSS"
+				},
+				{
+					"name": "JavaScript",
+					"logo": "/resources/svgs/skills/JavaScript.svg",
+					"link": "https://en.wikipedia.org/wiki/JavaScript"
+				},
+				{
+					"name": "Next.js",
+					"logo": "/resources/svgs/skills/Nextjs.svg",
+					"link": "https://nextjs.org/"
+				},
+				{
+					"name": "Tailwind",
+					"logo": "/resources/svgs/skills/Tailwind.svg",
+					"link": "https://tailwindcss.com/"
+				},
+				{
+					"name": "Framer Motion",
+					"logo": "/resources/svgs/skills/Framer-Motion.svg",
+					"link": "https://motion.dev/docs/react-animation/"
+				}
+			]
+		},
+		{
+			"name" : "DevOps",
+			"skills" :
+			[
+				{
+					"name": "Nginx",
+					"logo": "/resources/svgs/skills/Nginx.svg",
+					"link": "https://www.nginx.com/"
+				},
+				{
+					"name": "AWS",
+					"logo": "/resources/svgs/skills/AWS.svg",
+					"link": "https://aws.amazon.com/"
+				},
+				{
+					"name": "RDS",
+					"logo": "/resources/svgs/skills/RDS.svg",
+					"link": "https://aws.amazon.com/rds/"
+				},
+				{
+					"name": "S3",
+					"logo": "/resources/svgs/skills/S3.svg",
+					"link": "https://aws.amazon.com/s3/"
+				}
+			]
+		},
+		
+		{
+			"name" : "ML & Data Science",
+			"skills" :
+			[
+				{
+					"name": "PyTorch",
+					"logo": "/resources/svgs/skills/PyTorch.svg",
+					"link": "https://pytorch.org/"
+				},
+				{
+					"name": "TensorFlow",
+					"logo": "/resources/svgs/skills/TensorFlow.svg",
+					"link": "https://www.tensorflow.org/"
+				},
+				{
+					"name": "NumPy",
+					"logo": "/resources/svgs/skills/Numpy.svg",
+					"link": "https://numpy.org/"
+				},
+				{
+					"name": "Pandas",
+					"logo": "/resources/svgs/skills/Pandas.svg",
+					"link": "https://pandas.pydata.org/"
+				},
+				{
+					"name": "Matplotlib",
+					"logo": "/resources/svgs/skills/Matplotlib.svg",
+					"link": "https://matplotlib.org/"
+				},
+				{
+					"name": "Scikit-learn",
+					"logo": "/resources/svgs/skills/Scikit-Learn.svg",
+					"link": "https://scikit-learn.org/"
+				}
+			]
+		}
+	]
+}

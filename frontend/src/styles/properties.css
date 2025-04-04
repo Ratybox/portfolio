@@ -1,0 +1,102 @@
+@font-face
+{
+	font-family: raleway_bold;
+	src: url("/resources/fonts/raleway/Raleway-Bold.ttf");
+	font-display: swap;
+}
+
+@font-face
+{
+	font-family: raleway_semi_bold;
+	src: url("/resources/fonts/raleway/Raleway-SemiBold.ttf");
+	font-display: swap;
+}
+
+@font-face
+{
+	font-family: raleway_medium;
+	src: url("/resources/fonts/raleway/Raleway-Medium.ttf");
+	font-display: swap;
+}
+
+@font-face
+{
+	font-family: calibre_semi_bold;
+	src: url("/resources/fonts/calibre/CalibreSemibold.otf");
+	font-display: swap;
+}
+
+@font-face
+{
+	font-family: calibre_medium;
+	src: url("/resources/fonts/calibre/CalibreMedium.otf");
+	font-display: swap;
+}
+
+@font-face
+{
+	font-family: calibre_regular;
+	src: url("/resources/fonts/calibre/CalibreRegular.otf");
+	font-display: swap;
+}
+
+@font-face
+{
+	font-family: calibre_light;
+	src: url("/resources/fonts/calibre/CalibreLight.otf");
+	font-display: swap;
+}
+
+@font-face
+{
+	font-family: proxima_nova_bold;
+	src: url("/resources/fonts/proxima_nova/ProximaNovaBold.otf");
+	font-display: swap;
+}
+
+@font-face
+{
+	font-family: proxima_nova_semi_bold;
+	src: url("/resources/fonts/proxima_nova/ProximaNovaSemibold.otf");
+	font-display: swap;
+}
+
+:root {
+	/* Palette */
+	--light_blue: #1bbef5;
+	--blue: #0097cc;
+	--dark_blue: #006e94;
+
+	--light_red: #ff5252;
+	--red: #ff0000;
+	--dark_red: #b50000;
+
+	--light_green: #4ade80;
+	--green: #16a34a;
+	--dark_green: #166534;
+
+	--light_yellow: #facc15;
+	--yellow: #eab308;
+	--dark_yellow: #a16207;
+
+	--light_gray: #f2f2f2;
+	--gray: #e0e0e0;
+	--dark_gray: #363636;
+
+	/* Angel Uriot's palette */
+	--navy: #0a192f;
+	--light-navy: #112240;
+	--lightest-navy: #233554;
+	--slate: #8892b0;
+	--light-slate: #a8b2d1;
+	--lightest-slate: #ccd6f6;
+	--white: #e6f1ff;
+	--green: #64ffda;
+
+	/* Durations */
+	--fast: 0.2s;
+	--quick: 0.3s;
+	--normal: 0.4s;
+	--long: 0.6s;
+	--slow: 0.8s;
+}

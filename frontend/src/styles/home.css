@@ -1,0 +1,169 @@
+#home_section
+{
+	position: relative;
+	min-height: 100vh;
+	padding: 0;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+#particles
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+#home_section .content
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	max-width: 1000px;
+	padding: 0 50px;
+	margin: 0 auto;
+	z-index: 1;
+}
+
+#home_section .hi
+{
+	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--green);
+	margin: 0 0 30px 4px;
+}
+
+#home_section .name
+{
+	font-size: clamp(40px, 8vw, 80px);
+	font-weight: 600;
+	line-height: 1.1;
+	color: var(--lightest-slate);
+	margin: 0;
+}
+
+#home_section .title
+{
+	font-size: clamp(40px, 8vw, 80px);
+	font-weight: 600;
+	line-height: 1.1;
+	color: var(--light-slate);
+	margin: 0 0 30px 0;
+}
+
+#home_section .bio
+{
+	max-width: 540px;
+	font-size: 18px;
+	line-height: 1.5;
+	color: var(--slate);
+	margin-bottom: 40px;
+}
+
+#home_section .home_button
+{
+	margin-top: 10px;
+}
+
+#home_section .button
+{
+	padding: 1.25rem 1.75rem;
+	font-size: 14px;
+}
+
+#home_section .button_arrow
+{
+	width: 10px;
+	height: 10px;
+	margin-left: 10px;
+	stroke: var(--green);
+	stroke-width: 2px;
+	fill: none;
+	transition: transform var(--quick) ease;
+}
+
+#home_section .button:hover .button_arrow
+{
+	transform: translateY(3px);
+}
+
+#home_section .button .path_1
+{
+	opacity: 0;
+}
+
+#home_section .button .path_2
+{
+	opacity: 1;
+}
+
+/* Animation d'entrée */
+.in_animation
+{
+	opacity: 0;
+	transform: translateY(20px);
+	animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp
+{
+	from
+	{
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to
+	{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+#home_section .in_animation:nth-child(1)
+{
+	animation-delay: 100ms;
+}
+
+#home_section .in_animation:nth-child(2)
+{
+	animation-delay: 200ms;
+}
+
+#home_section .in_animation:nth-child(3)
+{
+	animation-delay: 300ms;
+}
+
+#home_section .in_animation:nth-child(4)
+{
+	animation-delay: 400ms;
+}
+
+#home_section .in_animation:nth-child(5)
+{
+	animation-delay: 500ms;
+}
+
+@media (max-width: 768px)
+{
+	#home_section .content
+	{
+		padding: 0 25px;
+	}
+	
+	#home_section .hi
+	{
+		font-size: 14px;
+	}
+	
+	#home_section .bio
+	{
+		font-size: 16px;
+	}
+}

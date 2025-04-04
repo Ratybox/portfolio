@@ -1,0 +1,19 @@
+{
+	"experience":
+	[
+		{
+			"date": 2025,
+			"type": "Backend developer",
+			"title": "Livri",
+			"description": "Worked as a Backend developer who built the entire infrastructure for a B2B SaaS Startup named Livri. I also did a bit of frontend work.",
+			"tags":
+			[
+				{ "name": "Django REST Framework", "url": "https://www.django-rest-framework.org/" },
+				{ "name": "Next.js", "url": "https://nextjs.org/" },
+				{ "name": "Tailwind CSS", "url": "https://tailwindcss.com/" }
+			],
+			"link": "https://livri.tech/",
+			"image": "/resources/images/experience/Livri.png"
+		}
+	]
+}
