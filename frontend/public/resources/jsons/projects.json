@@ -1,11 +1,11 @@
 {
 	"main": [
 		{
-			"date": 2024,
+			"date": 2025,
 			"type": "Web",
 			"title": "Portfolio",
 			"description": "A modern portfolio developed with Next.js, showcasing my web development skills and projects. It features smooth animations and an intuitive user interface.",
-			"technologies": ["Next.js", "React", "HTML", "CSS", "Tailwind CSS"],
+			"technologies": ["Next.js", "React", "HTML", "CSS", "Framer-Motion"],
 			"github": "https://github.com/Ratybox/portfolio",
 			"url": "https://radhibadache.com",
 			"image": "/resources/images/projects/Portfolio.png",
@@ -17,7 +17,7 @@
 			"title": "Madabina",
 			"description": "A project that implements PCA from scratch to visualize clustering and reduce dimensions, only using with NumPy.",
 			"technologies": ["NumPy", "Chart.js", "Next.js"],
-			"github": "https://github.com/RadhiBadache/madabina",
+			"github": "https://github.com/Ratybox/Madabina",
 			"url": "https://madabina-demo.herokuapp.com",
 			"image": "/resources/images/projects/Madabina.png",
 			"categories": ["school", "AI"]
@@ -34,7 +34,7 @@
 			"categories": ["school", "AI"]
 		},
 		{
-			"date": 2023,
+			"date": 2024,
 			"type": "Web & School Project",
 			"title": "Majlis",
 			"description": "An administration tool for disciplinary councils for university departments, built with Electron, Express.js, and React.",
@@ -45,7 +45,7 @@
 			"categories": ["web", "school"]
 		},
 		{
-			"date": 2023,
+			"date": 2025,
 			"type": "SaaS Project",
 			"title": "Livri",
 			"description": "A B2B SaaS platform for restaurants and their suppliers, built with Django Rest Framework and Next.js.",
