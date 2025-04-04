@@ -40,11 +40,6 @@
 			"skills" :
 			[
 				{
-					"name": "Python",
-					"logo": "/resources/svgs/skills/Python.svg",
-					"link": "https://www.python.org/"
-				},
-				{
 					"name": "Django",
 					"logo": "/resources/svgs/skills/Django.svg",
 					"link": "https://flask.palletsprojects.com/"
@@ -69,6 +64,11 @@
 					"name": "Socket.io",
 					"logo": "/resources/svgs/skills/Socket_io.svg",
 					"link": "https://socket.io"
+				},
+				{
+					"name": "Redis",
+					"logo": "/resources/svgs/skills/Redis.svg",
+					"link": "https://redis.io/"
 				},
 				{
 					"name": "PostgreSQL",
@@ -129,7 +129,7 @@
 			]
 		},
 		{
-			"name" : "DevOps",
+			"name" : "DevOps & Cloud",
 			"skills" :
 			[
 				{
@@ -151,6 +151,11 @@
 					"name": "S3",
 					"logo": "/resources/svgs/skills/S3.svg",
 					"link": "https://aws.amazon.com/s3/"
+				},
+				{
+					"name": "GitHub Actions",
+					"logo": "/resources/svgs/skills/GitHubActions.svg",
+					"link": "https://github.com/features/actions"
 				}
 			]
 		},

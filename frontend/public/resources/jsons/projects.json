@@ -28,7 +28,7 @@
 			"title": "Ramax",
 			"description": "A project that involves visualizing qualitative data and encoding it using OneHotEncoding for quantification. It serves to impute data through optimization algorithms and machine learning.",
 			"technologies": ["Python", "Pandas", "Numpy", "Scikit-learn"],
-			"github": "https://github.com/Amirmadjour/tab_de_codagex",
+			"github": "https://github.com/Amirmadjour/tab_de_codage",
 			"url": "https://test.madjria.com/",
 			"image": "/resources/images/projects/Ramax.png",
 			"categories": ["school", "AI"]
@@ -50,7 +50,6 @@
 			"title": "Livri",
 			"description": "A B2B SaaS platform for restaurants and their suppliers, built with Django Rest Framework and Next.js.",
 			"technologies": ["Django Rest Framework", "Next.js"],
-			"github": "https://github.com/Ratybox/livri",
 			"url": "https://backend.livri.tech/admin/",
 			"image": "/resources/images/projects/Livri.png",
 			"categories": ["web"]

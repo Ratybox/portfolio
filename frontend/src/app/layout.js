@@ -17,7 +17,7 @@ import "../styles/custom.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Radhi Badache Portfolio",
+  title: "Radhi Badache",
   description: "Radhi Badache portfolio.",
 };
 

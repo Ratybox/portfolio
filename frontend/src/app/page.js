@@ -99,8 +99,8 @@ export default function Home() {
               <motion.span className="name" variants={itemVariants}>Radhi Badache.</motion.span>
               <motion.span className="title" variants={itemVariants}>Backend Developer.</motion.span>
               <motion.p className="bio" variants={itemVariants}>
-                I'm a Backend developper, passionate about creating elegant solutions to complex problems.
-                I specialize in web development and am always looking for new opportunities.
+                I'm a Backend developer, dedicated to crafting efficient solutions for complex problems. 
+                I specialize in web development and actively seek new professional opportunities.
               </motion.p>
               <motion.div className="home_button" variants={itemVariants}>
                 <motion.a 
@@ -167,7 +167,6 @@ export default function Home() {
                   transition={{ delay: 0.2, duration: 0.5 }}
                 >
                   Built with <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">Next.js</a>. 
-                  Design inspired by <a href="https://github.com/angeluriot" target="_blank" rel="noopener noreferrer">Angel Uriot</a>.
                   Thank you for visiting!
                 </motion.p>
               </div>

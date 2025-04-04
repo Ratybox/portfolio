@@ -90,7 +90,7 @@ export default function Header() {
                 animate="animate"
                 whileHover="hover"
               >
-                <Image src="/resources/svgs/favicon.png" alt="logo" width={35} height={35} />
+                <Image src="/resources/svgs/favicon.png" alt="logo" width={45} height={45} />
               </motion.a>
             </div>
             <div className="menu">

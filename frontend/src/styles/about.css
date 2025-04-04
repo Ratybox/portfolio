@@ -92,7 +92,7 @@
 	margin-bottom: 10px;
 	padding-left: 20px;
 	font-family: 'SF Mono', 'Fira Code', monospace;
-	font-size: 13px;
+	font-size: 15px;
 	color: var(--slate);
 	transition: all 0.3s ease;
 	transition-delay: calc(var(--i, 0) * 50ms);
@@ -104,8 +104,8 @@
 	position: absolute;
 	left: 0;
 	color: var(--green);
-	font-size: 14px;
-	line-height: 18px;
+	font-size: 15px;
+	line-height: 20px;
 }
 
 #about_section .photo
