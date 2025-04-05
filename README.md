@@ -27,7 +27,3 @@ Welcome to the repository of my personal portfolio. This project leverages the f
 ## Development
 
 This project uses a modern Next.js setup with client-side components for interactive elements.
-
-## Link
-
-radhibadache.com
