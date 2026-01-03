@@ -1,12 +1,12 @@
 #about_section
 {
-	background-color: var(--navy);
+	background-color: transparent;
 	padding: 100px 0;
 }
 
 .about_end
 {
-	background-color: var(--navy);
+	background-color: transparent;
 }
 
 #about_section .content
@@ -48,14 +48,16 @@
 
 #about_section .section_title
 {
+	font-family: var(--font-primary);
 	color: var(--lightest-slate);
 	position: relative;
 	margin-bottom: 50px;
+	letter-spacing: -0.02em;
 }
 
 #about_section .section_title::before
 {
-	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-family: var(--font-mono);
 	font-size: 20px;
 	color: var(--green);
 	margin-right: 10px;
@@ -68,10 +70,10 @@
 
 #about_section .about_content .p_1
 {
-	font-family: 'Calibre', sans-serif;
+	font-family: var(--font-primary);
 	font-size: 18px;
 	color: var(--light-slate);
-	line-height: 1.5;
+	line-height: 1.7;
 	margin-bottom: 20px;
 }
 
@@ -91,8 +93,8 @@
 	position: relative;
 	margin-bottom: 10px;
 	padding-left: 20px;
-	font-family: 'SF Mono', 'Fira Code', monospace;
-	font-size: 15px;
+	font-family: var(--font-mono);
+	font-size: 14px;
 	color: var(--slate);
 	transition: all 0.3s ease;
 	transition-delay: calc(var(--i, 0) * 50ms);

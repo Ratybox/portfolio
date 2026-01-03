@@ -1,27 +1,297 @@
 #projects_section
 {
-	background-color: var(--navy);
+	background-color: transparent;
 	padding: 100px 0;
 }
 
 .projects_end
 {
-	background-color: var(--navy);
+	background-color: transparent;
 }
 
 #projects_section .section_title
 {
+	font-family: var(--font-primary);
 	color: var(--lightest-slate);
 	margin-bottom: 50px;
 	text-align: center;
+	letter-spacing: -0.02em;
 }
 
 #projects_section .section_title::before
 {
-	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-family: var(--font-mono);
 	font-size: 20px;
 	color: var(--green);
 	margin-right: 10px;
+}
+
+/* Project Filter Tabs */
+.project_filters {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-bottom: 60px;
+}
+
+.filter_tab {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 12px 20px;
+	background: rgba(26, 17, 40, 0.5);
+	border: 1px solid rgba(192, 132, 252, 0.15);
+	border-radius: 10px;
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	backdrop-filter: blur(8px);
+}
+
+.filter_tab:hover:not(.disabled) {
+	background: rgba(192, 132, 252, 0.1);
+	border-color: rgba(192, 132, 252, 0.3);
+	transform: translateY(-2px);
+}
+
+.filter_tab.active {
+	background: linear-gradient(135deg, rgba(192, 132, 252, 0.2), rgba(168, 85, 247, 0.15));
+	border-color: var(--green);
+	box-shadow: 0 4px 20px rgba(192, 132, 252, 0.2);
+}
+
+.filter_tab.disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+}
+
+.filter_icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+}
+
+.filter_icon svg {
+	width: 18px;
+	height: 18px;
+	stroke: var(--slate);
+	transition: stroke 0.3s ease;
+}
+
+.filter_tab:hover:not(.disabled) .filter_icon svg,
+.filter_tab.active .filter_icon svg {
+	stroke: var(--green);
+}
+
+.filter_label {
+	font-family: var(--font-primary);
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--light-slate);
+	transition: color 0.3s ease;
+}
+
+.filter_tab:hover:not(.disabled) .filter_label,
+.filter_tab.active .filter_label {
+	color: var(--lightest-slate);
+}
+
+.filter_count {
+	font-family: var(--font-mono);
+	font-size: 11px;
+	font-weight: 600;
+	color: var(--green);
+	background: rgba(192, 132, 252, 0.15);
+	padding: 3px 8px;
+	border-radius: 12px;
+	min-width: 24px;
+	text-align: center;
+}
+
+.filter_tab.active .filter_count {
+	background: rgba(192, 132, 252, 0.3);
+}
+
+/* Category Badge */
+.category_badge {
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 11px;
+	letter-spacing: 1px;
+}
+
+/* Research Project Metadata */
+.research_meta {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 15px 0;
+	padding: 16px;
+	background: rgba(168, 85, 247, 0.08);
+	border: 1px solid rgba(168, 85, 247, 0.15);
+	border-radius: 8px;
+}
+
+.research_meta .meta_item {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.research_meta .meta_item svg {
+	width: 16px;
+	height: 16px;
+	stroke: var(--purple-accent);
+	flex-shrink: 0;
+	margin-top: 2px;
+}
+
+.research_meta .meta_label {
+	font-family: var(--font-mono);
+	font-size: 11px;
+	font-weight: 600;
+	color: var(--purple-accent);
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	white-space: nowrap;
+}
+
+.research_meta .meta_value {
+	font-family: var(--font-primary);
+	color: var(--light-slate);
+	font-weight: 400;
+}
+
+#projects_section .inverted .research_meta {
+	text-align: right;
+}
+
+#projects_section .inverted .research_meta .meta_item {
+	flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 780px) {
+	.research_meta {
+		padding: 14px;
+		margin: 12px 0;
+	}
+	
+	.research_meta .meta_item {
+		flex-direction: column !important;
+		gap: 4px;
+		text-align: left !important;
+	}
+	
+	.research_meta .meta_item svg {
+		display: none;
+	}
+	
+	.research_meta .meta_label {
+		font-size: 10px;
+	}
+	
+	.research_meta .meta_value {
+		font-size: 12px;
+	}
+}
+
+/* No Projects State */
+.no-projects {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 300px;
+	padding: 60px 20px;
+	text-align: center;
+}
+
+.no-projects-icon {
+	width: 80px;
+	height: 80px;
+	margin-bottom: 24px;
+	opacity: 0.3;
+}
+
+.no-projects-icon svg {
+	width: 100%;
+	height: 100%;
+	stroke: var(--slate);
+}
+
+.no-projects p {
+	font-family: var(--font-primary);
+	font-size: 20px;
+	font-weight: 500;
+	color: var(--light-slate);
+	margin: 0 0 8px 0;
+}
+
+.no-projects span {
+	font-family: var(--font-mono);
+	font-size: 14px;
+	color: var(--slate);
+}
+
+@media screen and (max-width: 768px) {
+	.project_filters {
+		gap: 8px;
+		margin-bottom: 40px;
+	}
+	
+	.filter_tab {
+		padding: 10px 14px;
+		gap: 8px;
+	}
+	
+	.filter_icon {
+		width: 18px;
+		height: 18px;
+	}
+	
+	.filter_icon svg {
+		width: 16px;
+		height: 16px;
+	}
+	
+	.filter_label {
+		font-size: 13px;
+	}
+	
+	.filter_count {
+		font-size: 10px;
+		padding: 2px 6px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.project_filters {
+		gap: 6px;
+	}
+	
+	.filter_tab {
+		padding: 8px 12px;
+		flex: 1 1 calc(50% - 6px);
+		justify-content: center;
+	}
+	
+	.filter_label {
+		font-size: 12px;
+	}
+	
+	.no-projects-icon {
+		width: 60px;
+		height: 60px;
+	}
+	
+	.no-projects p {
+		font-size: 18px;
+	}
 }
 
 #projects_section .project.in_animation
@@ -45,14 +315,14 @@
 #projects_section .sort_choices .label
 {
 	color: var(--light-slate);
-	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-family: var(--font-mono);
 	font-size: 16px;
 }
 
 #projects_section .sort_choices .choice
 {
 	color: var(--green);
-	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-family: var(--font-mono);
 	font-size: 14px;
 	cursor: pointer;
 	border-radius: 4px;
@@ -63,7 +333,7 @@
 
 #projects_section .sort_choices .choice:hover
 {
-	background-color: rgba(100, 255, 218, 0.1);
+	background-color: rgba(192, 132, 252, 0.1);
 }
 
 #projects_section .sort_choices .choice.selected
@@ -187,7 +457,7 @@
 	width: 100%;
 	flex-wrap: wrap;
 	gap: 7px;
-	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-family: var(--font-mono);
 	font-size: 14px;
 	white-space: nowrap;
 	color: var(--green);
@@ -204,12 +474,14 @@
 
 #projects_section .project_text .project_title
 {
-	font-family: 'Calibre', sans-serif;
+	font-family: var(--font-primary);
 	font-size: 26px;
+	font-weight: 600;
 	color: var(--lightest-slate);
 	text-decoration: none;
 	margin-bottom: 12px;
 	margin-left: 15px;
+	letter-spacing: -0.02em;
 	transition: color var(--quick) ease;
 }
 
@@ -242,8 +514,10 @@
 
 #projects_section .project_text .text p
 {
-	font-family: 'Calibre', sans-serif;
-	font-size: 18px;
+	font-family: var(--font-primary);
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 1.7;
 	text-align: start;
 	color: var(--light-slate);
 }
@@ -274,7 +548,7 @@
 
 #projects_section .project_text .tags a
 {
-	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-family: var(--font-mono);
 	font-size: 14px;
 	color: var(--light-slate);
 	text-decoration: none;
@@ -348,7 +622,7 @@
 	color: var(--navy);
 	padding: 6px 12px;
 	background-color: var(--color);
-	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-family: var(--font-mono);
 	white-space: nowrap;
 	font-size: 12px;
 	border-radius: 4px;
@@ -385,7 +659,7 @@
 #projects_section .other_projects_title
 {
 	color: var(--lightest-slate);
-	font-family: 'Calibre', sans-serif;
+	font-family: var(--font-primary);
 	font-size: 22px;
 	font-weight: 600;
 	text-align: center;
@@ -466,8 +740,10 @@
 #projects_section .other_project_title
 {
 	color: var(--lightest-slate);
-	font-family: 'Calibre', sans-serif;
+	font-family: var(--font-primary);
 	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
 	margin-bottom: 10px;
 	transition: color var(--quick) ease;
 }
@@ -480,8 +756,10 @@
 #projects_section .other_project_description
 {
 	color: var(--light-slate);
-	font-family: 'Calibre', sans-serif;
-	font-size: 16px;
+	font-family: var(--font-primary);
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1.6;
 	margin-bottom: 30px;
 }
 
@@ -494,7 +772,7 @@
 	margin: 0;
 	list-style: none;
 	color: var(--slate);
-	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-family: var(--font-mono);
 	font-size: 12px;
 }
 
@@ -664,7 +942,7 @@
 #projects_section .spinner {
 	width: 40px;
 	height: 40px;
-	border: 3px solid rgba(100, 255, 218, 0.2);
+	border: 3px solid rgba(192, 132, 252, 0.2);
 	border-radius: 50%;
 	border-top-color: var(--green);
 	animation: spin 1s ease-in-out infinite;
@@ -681,7 +959,7 @@
 	width: 100%;
 	height: 200px;
 	color: var(--light-slate);
-	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-family: var(--font-mono);
 	font-size: 16px;
 	text-align: center;
 }
@@ -701,23 +979,23 @@
 	border: 1px solid var(--green);
 	border-radius: 4px;
 	padding: 8px 15px;
-	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-family: var(--font-mono);
 	font-size: 14px;
 	cursor: pointer;
 	transition: all 0.2s ease;
 }
 
 .filter.active {
-	background: rgba(100, 255, 218, 0.1);
+	background: rgba(192, 132, 252, 0.1);
 	color: var(--green);
 }
 
 .filter:hover {
-	background: rgba(100, 255, 218, 0.1);
+	background: rgba(192, 132, 252, 0.1);
 }
 
 #projects_section .project_text .tags span {
-	font-family: 'SF Mono', 'Fira Code', monospace;
+	font-family: var(--font-mono);
 	font-size: 14px;
 	color: var(--light-slate);
 	text-decoration: none;

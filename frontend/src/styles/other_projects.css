@@ -129,7 +129,8 @@
 
 #projects_section .other_project .project_title
 {
-	font-family: calibre_semi_bold;
+	font-family: 'Latin Modern Roman', 'Latin Modern', 'Computer Modern', 'Computer Modern Unicode', 'Times New Roman', Times, 'DejaVu Serif', serif;
+	font-weight: 600;
 	font-size: 28px;
 	color: var(--white);
 	text-decoration: none;
@@ -156,7 +157,8 @@
 
 #projects_section .other_project .text
 {
-	font-family: calibre_regular;
+	font-family: 'Latin Modern Roman', 'Latin Modern', 'Computer Modern', 'Computer Modern Unicode', 'Times New Roman', Times, 'DejaVu Serif', serif;
+	font-weight: 400;
 	font-size: 20px;
 	text-align: start;
 	color: var(--fade_white);

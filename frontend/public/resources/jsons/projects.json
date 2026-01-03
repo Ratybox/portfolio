@@ -1,5 +1,5 @@
 {
-	"main": [
+	"openSource": [
 		{
 			"date": 2025,
 			"type": "Web",
@@ -32,10 +32,22 @@
 			"url": "https://test.madjria.com/",
 			"image": "/resources/images/projects/Ramax.png",
 			"categories": ["school", "AI"]
+		}
+	],
+	"clientProjects": [
+		{
+			"date": 2025,
+			"type": "SaaS Platform",
+			"title": "Livri",
+			"description": "A B2B SaaS platform for restaurants and their suppliers, built with Django Rest Framework and Next.js.",
+			"technologies": ["Django Rest Framework", "Next.js"],
+			"url": "https://backend.livri.tech/admin/",
+			"image": "/resources/images/projects/Livri.png",
+			"categories": ["web"]
 		},
 		{
 			"date": 2024,
-			"type": "Web & School Project",
+			"type": "Desktop Application",
 			"title": "Majlis",
 			"description": "An administration tool for disciplinary councils for university departments, built with Electron, Express.js, and React.",
 			"technologies": ["Electron", "Express.js", "React", "MySQL", "Amazon RDS"],
@@ -43,17 +55,22 @@
 			"url": "https://drive.google.com/drive/folders/1ulr9InR4xba3ghI4F1GTilgRUqiiweNp",
 			"image": "/resources/images/projects/Majlis.png",
 			"categories": ["web", "school"]
-		},
-		{
-			"date": 2025,
-			"type": "SaaS Project",
-			"title": "Livri",
-			"description": "A B2B SaaS platform for restaurants and their suppliers, built with Django Rest Framework and Next.js.",
-			"technologies": ["Django Rest Framework", "Next.js"],
-			"url": "https://backend.livri.tech/admin/",
-			"image": "/resources/images/projects/Livri.png",
-			"categories": ["web"]
 		}
 	],
-	"other": []
+	"research": [
+		{
+			"date": 2025,
+			"type": "Academic Paper",
+			"title": "SCA-GWO Hybrid Imputation",
+			"description": "A novel hybrid metaheuristic approach combining Sine Cosine Algorithm (SCA) and Grey Wolf Optimizer (GWO) for missing data imputation in water potability classification. Achieved up to 72.26% accuracy on the Water Potability dataset, demonstrating the effectiveness of optimization algorithms for handling incomplete environmental datasets.",
+			"technologies": ["Python", "NumPy", "Pandas", "Scikit-learn", "K-Nearest Neighbors", "Jupyter"],
+			"github": "https://github.com/Ratybox/SCA-GWO-Imputation",
+			"url": "https://github.com/Ratybox/SCA-GWO-Imputation",
+			"image": "/resources/images/projects/sca-gwo.jpg",
+			"categories": ["AI", "research"],
+			"authors": "Salah Arab, Amir Madjour, Mohamed Bennabi, Soltane Rezaigia, Anes Benyelles, Radhi Badache",
+			"institution": "University of Science and Technology, Oran",
+			"supervisors": "Miloud Besnassi, Nabil Neggaz"
+		}
+	]
 }

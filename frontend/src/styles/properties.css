@@ -1,102 +1,98 @@
-@font-face
-{
+/* ============================================
+   FONTS - Outfit (Modern & Elegant)
+   ============================================ */
+
+/* Google Fonts - Outfit */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* Monospace for code */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Legacy fonts for compatibility */
+@font-face {
 	font-family: raleway_bold;
 	src: url("/resources/fonts/raleway/Raleway-Bold.ttf");
 	font-display: swap;
 }
 
-@font-face
-{
+@font-face {
 	font-family: raleway_semi_bold;
 	src: url("/resources/fonts/raleway/Raleway-SemiBold.ttf");
 	font-display: swap;
 }
 
-@font-face
-{
+@font-face {
 	font-family: raleway_medium;
 	src: url("/resources/fonts/raleway/Raleway-Medium.ttf");
 	font-display: swap;
 }
 
-@font-face
-{
-	font-family: calibre_semi_bold;
-	src: url("/resources/fonts/calibre/CalibreSemibold.otf");
-	font-display: swap;
-}
-
-@font-face
-{
-	font-family: calibre_medium;
-	src: url("/resources/fonts/calibre/CalibreMedium.otf");
-	font-display: swap;
-}
-
-@font-face
-{
-	font-family: calibre_regular;
-	src: url("/resources/fonts/calibre/CalibreRegular.otf");
-	font-display: swap;
-}
-
-@font-face
-{
-	font-family: calibre_light;
-	src: url("/resources/fonts/calibre/CalibreLight.otf");
-	font-display: swap;
-}
-
-@font-face
-{
-	font-family: proxima_nova_bold;
-	src: url("/resources/fonts/proxima_nova/ProximaNovaBold.otf");
-	font-display: swap;
-}
-
-@font-face
-{
-	font-family: proxima_nova_semi_bold;
-	src: url("/resources/fonts/proxima_nova/ProximaNovaSemibold.otf");
-	font-display: swap;
-}
+/* ============================================
+   COLOR PALETTE - Elegant Purple/Violet
+   ============================================ */
 
 :root {
-	/* Palette */
-	--light_blue: #1bbef5;
-	--blue: #0097cc;
-	--dark_blue: #006e94;
+	/* === PRIMARY PURPLE PALETTE === */
+	--navy: #0f0a1a;                    /* Deep purple-black background */
+	--light-navy: #1a1128;              /* Elevated surface */
+	--lightest-navy: #2d1f47;           /* Cards, hover states */
+	
+	/* === TEXT COLORS === */
+	--slate: #a599c2;                   /* Body text - muted purple */
+	--light-slate: #c9bfdf;             /* Secondary text */
+	--lightest-slate: #ebe5f5;          /* Headlines */
+	--white: #f8f5ff;                   /* Pure white with purple tint */
+	
+	/* === ACCENT COLORS === */
+	--green: #c084fc;                   /* Primary accent - Vibrant purple */
+	--accent-glow: #a855f7;             /* Glow effects */
+	--accent-light: #e9d5ff;            /* Light accent */
+	--accent-dark: #7c3aed;             /* Dark accent */
+	
+	/* === SECONDARY ACCENTS === */
+	--cyan: #67e8f9;                    /* Secondary accent - Cyan */
+	--pink: #f472b6;                    /* Tertiary accent - Pink */
+	--gold: #fbbf24;                    /* Special highlights */
+	
+	/* === GRADIENTS === */
+	--gradient-primary: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+	--gradient-accent: linear-gradient(135deg, #c084fc 0%, #f472b6 100%);
+	--gradient-glow: linear-gradient(135deg, rgba(168, 85, 247, 0.3) 0%, rgba(99, 102, 241, 0.3) 100%);
+	
+	/* === LEGACY COLORS (for compatibility) === */
+	--light_blue: #67e8f9;
+	--blue: #6366f1;
+	--dark_blue: #4f46e5;
+	
+	--light_red: #fb7185;
+	--red: #f43f5e;
+	--dark_red: #be123c;
+	
+	--light_green: #c084fc;
+	--dark_green: #7c3aed;
+	
+	--light_yellow: #fbbf24;
+	--yellow: #f59e0b;
+	--dark_yellow: #d97706;
+	
+	--light_gray: #ebe5f5;
+	--gray: #c9bfdf;
+	--dark_gray: #2d1f47;
 
-	--light_red: #ff5252;
-	--red: #ff0000;
-	--dark_red: #b50000;
-
-	--light_green: #4ade80;
-	--green: #16a34a;
-	--dark_green: #166534;
-
-	--light_yellow: #facc15;
-	--yellow: #eab308;
-	--dark_yellow: #a16207;
-
-	--light_gray: #f2f2f2;
-	--gray: #e0e0e0;
-	--dark_gray: #363636;
-
-	/* Angel Uriot's palette */
-	--navy: #0a192f;
-	--light-navy: #112240;
-	--lightest-navy: #233554;
-	--slate: #8892b0;
-	--light-slate: #a8b2d1;
-	--lightest-slate: #ccd6f6;
-	--white: #e6f1ff;
-	--green: #64ffda;
-
-	/* Durations */
+	/* === DURATIONS === */
 	--fast: 0.2s;
 	--quick: 0.3s;
 	--normal: 0.4s;
 	--long: 0.6s;
 	--slow: 0.8s;
+	
+	/* === TYPOGRAPHY === */
+	--font-primary: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+	
+	/* === SHADOWS === */
+	--shadow-sm: 0 2px 8px rgba(139, 92, 246, 0.1);
+	--shadow-md: 0 4px 20px rgba(139, 92, 246, 0.15);
+	--shadow-lg: 0 8px 40px rgba(139, 92, 246, 0.2);
+	--shadow-glow: 0 0 30px rgba(192, 132, 252, 0.3);
 }

@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import Script from "next/script";
 import "../styles/properties.css";
 import "../styles/style.css";
@@ -14,8 +13,6 @@ import "../styles/contact.css";
 import "../styles/footer.css";
 import "../styles/custom.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata = {
   title: "Radhi Badache",
   description: "Radhi Badache portfolio.",
@@ -27,7 +24,7 @@ export default function RootLayout({ children }) {
       <head>
         <Script src="/libraries/particlesjs/particles.js" strategy="beforeInteractive" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

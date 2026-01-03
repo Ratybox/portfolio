@@ -12,7 +12,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
-import Particles from './components/Particles';
+import MLBackground from './components/MLBackground';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -79,6 +79,9 @@ export default function Home() {
       <div id="lcp"><p>LCP</p></div>
       
       <Header />
+      
+      {/* Global ML Background - covers entire site */}
+      <MLBackground />
 
       <motion.div 
         id="content"
@@ -93,14 +96,14 @@ export default function Home() {
             id="home_section"
             variants={contentVariants}
           >
-            <Particles />
             <div className="content">
               <motion.span className="hi" variants={itemVariants}>Hi, my name is</motion.span>
               <motion.span className="name" variants={itemVariants}>Radhi Badache.</motion.span>
-              <motion.span className="title" variants={itemVariants}>Backend Developer.</motion.span>
+              <motion.span className="title" variants={itemVariants}>Backend Developer & AI Student.</motion.span>
               <motion.p className="bio" variants={itemVariants}>
-                I'm a Backend developer, dedicated to crafting efficient solutions for complex problems. 
-                I specialize in web development and actively seek new professional opportunities.
+                I'm a Backend Developer and AI Student passionate about building intelligent systems. 
+                I specialize in backend development with AI integrations, crafting efficient solutions that leverage the power of artificial intelligence. 
+                I'm actively exploring new opportunities where technology meets innovation.
               </motion.p>
               <motion.div className="home_button" variants={itemVariants}>
                 <motion.a 
